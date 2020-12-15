@@ -1,0 +1,46 @@
+name: 'Allure Report S3'
+description: 'Publish Allure Reports to S3'
+author: 'Nitro SysEng'
+branding:
+  icon: 'trending-up'
+  color: 'orange'
+inputs:
+  test_results:
+    description: 'Test result data dir'
+    required: true
+    default: 'target'
+  allure_report:
+    description: 'Allure report target dir'
+    required: true
+    default: 'allure-report'
+  allure_history:
+    description: 'Workdir allure history'
+    required: true
+    default: 'allure-history'
+  s3_bucket:
+    description: 'S3 Bucket to publish report'
+    required: true
+    default: ''
+  s3_region:
+    description: 'Bucket region to publish report'
+    required: true
+    default: ''
+  s3_bucket_dns:
+    description: 'DNS record pointing to reports bucket'
+    required: true
+    default: ''
+  github_run_num:
+    description: 'GitHub Actions build number'
+    required: true
+    default: ${{ github.run_number }}
+  github_run_id:
+    description: 'GitHub Actions run id'
+    required: true
+    default: ${{ github.run_id }}
+  github_repo:
+    description: 'GitHub repository'
+    required: true
+    default: ${{ github.repository }}
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
