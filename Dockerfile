@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-buster
 
-ARG RELEASE=2.13.7
+ARG RELEASE=2.13.8
 ARG ALLURE_REPO=https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline
 
 LABEL org.opencontainers.image.authors="systems@gonitro.com"
